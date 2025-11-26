@@ -5,7 +5,6 @@ import { Layout } from './components';
 import {
   LoginView,
   DashboardView,
-  ReportsView,
   SettingsView,
   AnalyticsView,
 } from './views';

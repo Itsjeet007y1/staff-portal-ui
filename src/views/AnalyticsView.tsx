@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import { useQuery } from '@apollo/client';
 import { LIST_EMPLOYEES_QUERY } from '@/graphql';
-import { Employee, EmployeePage } from '@/models';
+import { EmployeePage } from '@/models';
 import {
   PieChart,
   Pie,
@@ -215,12 +215,12 @@ export const AnalyticsView: React.FC = () => {
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={({ name, percentage }) => `${name}: ${percentage.toFixed(1)}%`}
+                  label={({ name, value }) => `${name}: ${value}%`}
                   outerRadius={100}
                   fill="#8884d8"
                   dataKey="value"
                 >
-                  {attendanceDistribution.map((entry, index) => (
+                  {attendanceDistribution.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>

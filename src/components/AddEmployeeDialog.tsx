@@ -11,7 +11,7 @@ import {
   IconButton,
   Typography,
 } from '@mui/material';
-import { Add, Close } from '@mui/icons-material';
+import { Close } from '@mui/icons-material';
 import { useMutation } from '@apollo/client';
 import { ADD_EMPLOYEE_MUTATION, LIST_EMPLOYEES_QUERY } from '@/graphql';
 import { EmployeeInput } from '@/models';
