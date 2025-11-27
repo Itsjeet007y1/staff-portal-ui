@@ -62,13 +62,24 @@ export const EmployeesTileView: React.FC = () => {
 
   return (
     <Box>
-      <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
-        <Typography variant="h4">Employees Tile View</Typography>
-        <Box display="flex" gap={2}>
+      <Box 
+        display="flex" 
+        flexDirection={{ xs: 'column', sm: 'row' }}
+        justifyContent="space-between" 
+        alignItems={{ xs: 'stretch', sm: 'center' }} 
+        mb={3}
+        gap={2}
+      >
+        <Typography variant="h4" sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }}>
+          Employees Tile View
+        </Typography>
+        <Box display="flex" gap={1} flexDirection={{ xs: 'column', sm: 'row' }}>
           <Button
             variant="contained"
             startIcon={<Add />}
             onClick={() => setOpenAddDialog(true)}
+            fullWidth
+            sx={{ display: { xs: 'block', sm: 'inline-flex' } }}
           >
             Add Employee
           </Button>
@@ -76,8 +87,10 @@ export const EmployeesTileView: React.FC = () => {
             variant="outlined"
             startIcon={<GridViewIcon />}
             onClick={() => navigate('/employees/grid')}
+            fullWidth
+            sx={{ display: { xs: 'block', sm: 'inline-flex' } }}
           >
-            Switch to Grid View
+            Grid View
           </Button>
         </Box>
       </Box>

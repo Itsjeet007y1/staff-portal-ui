@@ -69,13 +69,24 @@ export const EmployeesGrid: React.FC = () => {
 
   return (
     <Box>
-      <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
-        <Typography variant="h4">Employees Grid View</Typography>
-        <Box display="flex" gap={2}>
+      <Box 
+        display="flex" 
+        flexDirection={{ xs: 'column', sm: 'row' }}
+        justifyContent="space-between" 
+        alignItems={{ xs: 'stretch', sm: 'center' }} 
+        mb={3}
+        gap={2}
+      >
+        <Typography variant="h4" sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }}>
+          Employees Grid View
+        </Typography>
+        <Box display="flex" gap={1} flexDirection={{ xs: 'column', sm: 'row' }}>
           <Button
             variant="contained"
             startIcon={<Add />}
             onClick={() => setOpenAddDialog(true)}
+            fullWidth
+            sx={{ display: { xs: 'block', sm: 'inline-flex' } }}
           >
             Add Employee
           </Button>
@@ -83,13 +94,15 @@ export const EmployeesGrid: React.FC = () => {
             variant="outlined"
             startIcon={<ViewModule />}
             onClick={() => navigate('/employees/tile')}
+            fullWidth
+            sx={{ display: { xs: 'block', sm: 'inline-flex' } }}
           >
-            Switch to Tile View
+            Tile View
           </Button>
         </Box>
       </Box>
-      <TableContainer component={Paper} elevation={3}>
-        <Table>
+      <TableContainer component={Paper} elevation={3} sx={{ overflowX: 'auto' }}>
+        <Table sx={{ minWidth: 650 }}>
           <TableHead>
             <TableRow sx={{ backgroundColor: '#f5f5f5' }}>
               <TableCell><strong>ID</strong></TableCell>

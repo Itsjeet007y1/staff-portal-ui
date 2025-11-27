@@ -66,8 +66,8 @@ export const EmployeeDetails: React.FC = () => {
       </Button>
 
       <Card elevation={3}>
-        <CardContent sx={{ p: 4 }}>
-          <Typography variant="h4" gutterBottom color="primary">
+        <CardContent sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
+          <Typography variant="h4" gutterBottom color="primary" sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }}>
             {employee.name}
           </Typography>
           <Divider sx={{ my: 3 }} />

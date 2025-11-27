@@ -42,11 +42,12 @@ export const LoginView: React.FC = () => {
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#f5f5f5',
+        p: { xs: 2, sm: 3 },
       }}
     >
       <Container maxWidth="sm">
         <Card elevation={3}>
-          <CardContent sx={{ p: 4 }}>
+          <CardContent sx={{ p: { xs: 2, sm: 3, md: 4 } }}>
             <Typography variant="h4" component="h1" gutterBottom align="center">
               Staff Portal
             </Typography>

@@ -109,7 +109,7 @@ export const AnalyticsView: React.FC = () => {
 
   return (
     <Box>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" gutterBottom sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }}>
         Attendance Analytics
       </Typography>
 
@@ -204,8 +204,8 @@ export const AnalyticsView: React.FC = () => {
       <Grid container spacing={3}>
         {/* Attendance Distribution Pie Chart */}
         <Grid item xs={12} md={6}>
-          <Paper sx={{ p: 3, height: 400 }}>
-            <Typography variant="h6" gutterBottom>
+          <Paper sx={{ p: { xs: 2, sm: 3 }, height: { xs: 350, sm: 400 } }}>
+            <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}>
               Attendance Distribution
             </Typography>
             <ResponsiveContainer width="100%" height="90%">
@@ -232,15 +232,15 @@ export const AnalyticsView: React.FC = () => {
 
         {/* Top Employees Bar Chart */}
         <Grid item xs={12} md={6}>
-          <Paper sx={{ p: 3, height: 400 }}>
-            <Typography variant="h6" gutterBottom>
+          <Paper sx={{ p: { xs: 2, sm: 3 }, height: { xs: 350, sm: 400 } }}>
+            <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}>
               Top Employees by Attendance
             </Typography>
             <ResponsiveContainer width="100%" height="90%">
               <BarChart data={topEmployees}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
-                <YAxis domain={[0, 100]} />
+                <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} fontSize={12} />
+                <YAxis domain={[0, 100]} fontSize={12} />
                 <Tooltip />
                 <Legend />
                 <Bar dataKey="attendance" fill="#4caf50" name="Attendance %" />
@@ -251,15 +251,15 @@ export const AnalyticsView: React.FC = () => {
 
         {/* Bottom Employees Bar Chart */}
         <Grid item xs={12}>
-          <Paper sx={{ p: 3, height: 400 }}>
-            <Typography variant="h6" gutterBottom color="error">
+          <Paper sx={{ p: { xs: 2, sm: 3 }, height: { xs: 350, sm: 400 } }}>
+            <Typography variant="h6" gutterBottom color="error" sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}>
               Employees Needing Attention (Lowest Attendance)
             </Typography>
             <ResponsiveContainer width="100%" height="90%">
               <BarChart data={bottomEmployees}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis domain={[0, 100]} />
+                <XAxis dataKey="name" fontSize={12} />
+                <YAxis domain={[0, 100]} fontSize={12} />
                 <Tooltip />
                 <Legend />
                 <Bar dataKey="attendance" fill="#f44336" name="Attendance %" />
@@ -270,8 +270,8 @@ export const AnalyticsView: React.FC = () => {
 
         {/* Attendance Summary Table */}
         <Grid item xs={12}>
-          <Paper sx={{ p: 3 }}>
-            <Typography variant="h6" gutterBottom>
+          <Paper sx={{ p: { xs: 2, sm: 3 } }}>
+            <Typography variant="h6" gutterBottom sx={{ fontSize: { xs: '1rem', sm: '1.25rem' } }}>
               Attendance Summary by Category
             </Typography>
             <Grid container spacing={2} sx={{ mt: 1 }}>
@@ -286,11 +286,13 @@ export const AnalyticsView: React.FC = () => {
                       textAlign: 'center',
                     }}
                   >
-                    <Typography variant="h3" fontWeight="bold">
+                    <Typography variant="h3" fontWeight="bold" sx={{ fontSize: { xs: '2rem', sm: '3rem' } }}>
                       {category.value}
                     </Typography>
-                    <Typography variant="body1">{category.name}</Typography>
-                    <Typography variant="body2" sx={{ opacity: 0.9 }}>
+                    <Typography variant="body1" sx={{ fontSize: { xs: '0.875rem', sm: '1rem' } }}>
+                      {category.name}
+                    </Typography>
+                    <Typography variant="body2" sx={{ opacity: 0.9, fontSize: { xs: '0.75rem', sm: '0.875rem' } }}>
                       {category.percentage.toFixed(1)}% of total
                     </Typography>
                   </Box>

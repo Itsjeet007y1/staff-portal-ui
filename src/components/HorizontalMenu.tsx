@@ -24,15 +24,27 @@ export const HorizontalMenu: React.FC<HorizontalMenuProps> = ({ onMenuClick }) =
           edge="start"
           color="inherit"
           aria-label="menu"
-          sx={{ mr: 2 }}
+          sx={{ mr: { xs: 1, sm: 2 } }}
           onClick={onMenuClick}
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 0, mr: 4 }}>
+        <Typography 
+          variant="h6" 
+          component="div" 
+          sx={{ 
+            flexGrow: 0, 
+            mr: { xs: 1, sm: 2, md: 4 },
+            fontSize: { xs: '1rem', sm: '1.25rem' }
+          }}
+        >
           Staff Portal
         </Typography>
-        <Box sx={{ flexGrow: 1, display: 'flex', gap: 2 }}>
+        <Box sx={{ 
+          flexGrow: 1, 
+          display: { xs: 'none', md: 'flex' }, 
+          gap: 2 
+        }}>
           <Button color="inherit" onClick={() => navigate('/')}>
             Dashboard
           </Button>
@@ -46,6 +58,7 @@ export const HorizontalMenu: React.FC<HorizontalMenuProps> = ({ onMenuClick }) =
             Settings
           </Button>
         </Box>
+        <Box sx={{ flexGrow: { xs: 1, md: 0 } }} />
         <IconButton color="inherit" onClick={handleLogout}>
           <Logout />
         </IconButton>
